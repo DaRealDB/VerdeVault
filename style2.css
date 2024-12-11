@@ -1,0 +1,491 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f9f4;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #ffffff; /* Background color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.137);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 10;
+}
+
+.header-logo {
+  width: 100px; /* Fixed width for the logo */
+  height: auto;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  width: 100%; /* Full width for centering */
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%; /* Full width to ensure centering */
+  flex-grow: 1;
+}
+
+.nav-btn {
+  background-color: transparent;
+  border: none;
+  color: #4CAF50;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Add underline only for the Home button */
+.home-btn {
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  color: #4CAF50; 
+  font-size: 18px;
+  border-bottom: 3px solid #45a049; /* Change to your desired border color */
+
+  transition: background-color 0.3s;
+}
+
+.nav-btn:hover  {
+  border-bottom: 3px solid #45a049; /* Change to your desired border color */
+}
+
+/* Content Styles */
+.content {
+  margin-top: 80px; /* Add space for header */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height */
+}
+
+h1 {
+  font-size: 36px;
+  color: #333;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Prevent interaction when hidden */
+  animation: fadeIn 1.5s ease forwards; /* Trigger fade-in animation */
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transform: scale(0.8); /* Start smaller */
+  animation: popIn 1.5s ease forwards; /* Trigger scale animation */
+}
+
+.lang-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.lang-btn:hover {
+  background-color: #45a049;
+}
+
+/* Keyframes for the fade-in effect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* Keyframes for the pop-in scaling effect */
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  margin-left: 60px; /* Slightly adjust this to move it left */
+}
+
+.search-bar {
+  padding: 8px;
+  font-size: 16px;
+  color:  #4CAF50;
+  width: 200px; /* Fixed width */
+}
+
+.search-button {
+  padding: 8px 16px;
+  margin-left: 10px;
+  margin-right: 50px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #45a049;
+}
+
+/* User Profile Section */
+
+.user-profilee {
+  margin-top: 20px;
+  position: absolute;
+  top: 100px; /* Place it just below the header */
+  left: 30px; /* Align to the left */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.534);
+  border-radius: 8px;
+  width: 150px; /* Fixed width */
+  height: 400px; /* Fixed height */
+}
+
+
+
+
+.profile-pic {
+  width: 100px; /* Fixed width */
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-name {
+  margin-top: 5px;
+  font-size: 24px;
+  color: #4CAF50;
+}
+
+.profile-name2 {
+  font-size: 12px;
+  color: #4CAF50;
+  text-align: right;
+}
+
+.buttons-container {
+  justify-content: flex-end;
+  background-color: transparent;
+  position: absolute;
+  margin-top: 20px;
+  top: 100px; /* Same height as user profile */
+  right: 20px; /* Align to the right */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Add space between buttons */
+  align-items: end;
+}
+
+.button {
+  top: 50px;
+  background-color: transparent;
+  padding: 10px 20px;
+  color: #45a049;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bolder;
+  padding-right: 5px; 
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  border-bottom: 3px solid #45a049; /* Change to your desired border color */
+}
+
+.center-buttons-container {
+  
+  position: absolute;
+  top: 40%; /* Centers vertically */
+  left: 50%; /* Centers horizontally */
+  transform: translate(-50%, -50%); /* Adjusts the position so the container is truly centered */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px; /* Space between the two rows of buttons */
+  height: 240px; /* Fixed height */
+}
+
+.top-buttons, .bottom-buttons {
+  display: flex;
+  gap: 20px; /* Space between buttons */
+  
+}
+
+.center-button {
+  background-color: transparent;
+  border: 2px solid #45a049; /* Green border */
+  color: #45a049; /* Green text */
+  padding: 12px 24px; /* Fixed padding */
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 15px; /* Rounded corners */
+  cursor: pointer;
+  height: 150px;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.237);
+
+}
+
+.center-button:hover {
+  background-color: #37b367;/* Light green background on hover */
+  color: white; /* White text on hover */
+}
+
+.four-buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Fixed space between the rows */
+  margin-top: 60px; /* Adds some space between the buttons and the previous section */
+  position: absolute; /* Positioning to control where it appears */
+  top: 70%; /* Fixed top position */
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  width: 50%; /* Fixed width */
+}
+
+/* Each Row of 2 Buttons */
+.row-buttons {
+  display: flex;
+  justify-content: space-between; /* Space out the buttons */
+  gap: 20px; /* Fixed space between the buttons in the row */
+}
+
+.center-buttonn {
+  background-color: transparent;
+  border: 2px solid #45a049; /* Green border */
+  color: #45a049; /* Green text */
+  padding: 12px 24px; /* Fixed padding */
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  width: 45%; /* Fixed width for buttons in the row */
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.237);
+
+}
+
+.center-buttonn:hover {
+  background-color: #37b367;/* Light green background on hover */
+  color: white; /* White text on hover */
+}
+
+
+.user-profile {
+  margin-top: 20px;
+  position: absolute;
+  top: 70px; /* Place it just below the header */
+  left: 210px; /* Align to the left */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 0px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.534);
+  border-radius: 0 0 8px 8px;
+  width: 250px; /* Fixed width */
+  height: 0px; /* Fixed height */
+  z-index: 10;
+  
+  
+  transition: height 0.5s ease;
+}
+
+.inv-btn {
+  background-color: transparent;
+  border: none;
+  color: #4CAF50;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.inv-btn:hover {
+  border-bottom: 3px solid #45a049; /* Change to your desired border color */
+}
+
+.buttons-containerr {
+  justify-content: flex-end;
+  background-color: transparent;
+  position: absolute;
+  margin-top: -80px;
+  top: 100px; /* Initial top value */
+  right: 20px; /* Align to the right */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Add space between buttons */
+  align-items: start;
+  z-index: 12;
+}
+
+.buttonn {
+  background-color: transparent;
+  padding: 10px 20px;
+  color: #45a049;
+  border: none;
+  cursor: pointer;
+ 
+  padding-left: 5px; 
+  font-size: 16px;
+  font-weight: bolder;
+  transition: background-color 0.3s;
+  z-index: 12;  
+}
+
+.buttonn:hover {
+  border-bottom: 2px solid #45a049; /* Change to your desired border color */
+}
+
+.input {
+  width: 100%;
+  width: 180px;
+  height: 20px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.9px solid rgb(118, 157, 128);
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0px 0px 20px -18px;
+  margin-right: 50px;
+  text-align: right;
+}
+
+.input:hover {
+  border: 3px solid #66b86a;
+  box-shadow: 0px 0px 20px -17px;
+}
+
+.input:active {
+  transform: scale(0.95);
+}
+
+.input:focus {
+  border: 2px solid#45a049;
+}
+
+
+/* right side slide down*/
+.user-profile3 {
+  margin-top: 20px;
+  position: absolute;
+  top: 10px; /* Place it just below the header */
+  left: -39px; /* Align to the left */
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f9f4;
+  padding: 0px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.234);
+  border-radius: 0 0 0px 8px;
+  width: 290px; /* Fixed width */
+  height: 0px; /* Fixed height */
+  z-index: 10;
+  
+  justify-content: flex-end;
+  align-items: start;
+
+  transition: height 0.5s ease;
+}
+
+.buttons-containerr3 {
+  opacity: 0;
+  justify-content: right;
+  background-color: transparent;
+  position: absolute;
+  margin-top: -90px;
+  top: -90px; /* Initial top value */
+  right: 0px; /* Align to the right */
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Add space between buttons */
+  align-items: end;
+  z-index: 12;
+}
+
+.buttonn3 {
+  background-color: transparent;
+  padding: 10px 20px;
+  color: #45a049;
+  border: none;
+  cursor: pointer;
+ 
+  text-align: right;
+  padding-right: 20px; 
+  font-size: 13px;
+  font-weight: bolder;
+  transition: background-color 0.3s;
+  z-index: 12;  
+}
+
+.buttonn3:hover {
+  border-bottom: 2px solid #45a049; /* Change to your desired border color */
+}
+
+.lesson-btn {
+  background-color: transparent;
+  padding: 10px 20px;
+  color: #45a049;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bolder;
+  padding-right: 5px; 
+  z-index: 20;
+  margin-bottom: 0px;
+  transition: background-color 0.3s, margin-bottom 1s ease-in-out;
+
+}
+
+.lesson-btn:hover {
+  border-bottom: 2px solid #45a049; /* Change to your desired border color */
+}
